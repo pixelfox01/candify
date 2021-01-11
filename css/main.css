@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap");
+html {
+  font-family: "Nunito", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+ul li {
+  display: inline;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.grid-container {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.4fr 1fr;
+      grid-template-columns: 0.4fr 1fr;
+  -ms-grid-rows: 0.7fr 5fr 1fr 1fr 0.8fr;
+      grid-template-rows: 0.7fr 5fr 1fr 1fr 0.8fr;
+      grid-template-areas: "brand  nav" "main   main" "nom    nom" "yum    yum" "footer footer";
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    -ms-grid-columns: 30% 20% 50%;
+        grid-template-columns: 30% 20% 50%;
+    -ms-grid-rows: 0.7fr 5fr 1fr 0.8fr;
+        grid-template-rows: 0.7fr 5fr 1fr 0.8fr;
+        grid-template-areas: "brand  nav     nav" "main   main    main" "nom    nom     yum" "footer footer  footer";
+  }
+}
+
+@media (min-width: 1060px) {
+  .grid-container {
+    -ms-grid-columns: 0.7fr 0.7fr 1fr;
+        grid-template-columns: 0.7fr 0.7fr 1fr;
+        grid-template-areas: "brand  brand   nav" "main   main    candy" "nom    yum     candy" "footer footer  candy";
+  }
+}
+
+.grid-container .brand {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: brand;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 16px;
+  background-color: #f8d174;
+}
+
+@media (min-width: 1060px) {
+  .grid-container .brand {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-left: 40px;
+  }
+}
+
+.grid-container .brand a {
+  color: #fa403a;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.grid-container .nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: nav;
+  background-color: #f8d174;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1060px) {
+  .grid-container .nav {
+    background-color: white;
+  }
+}
+
+.grid-container .nav ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.grid-container .nav ul li {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.grid-container .nav ul li:last-child a {
+  color: #fa403a;
+  font-weight: 700;
+}
+
+.grid-container .main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: main;
+  background-color: #f8d174;
+  padding: 1rem;
+}
+
+@media (min-width: 1060px) {
+  .grid-container .main {
+    padding-left: 40px;
+  }
+}
+
+.grid-container .main h1 {
+  display: inline-block;
+  width: 180px;
+}
+
+.grid-container .main p {
+  font-size: 1.1rem;
+}
+
+.grid-container .candy {
+  display: none;
+  background-image: url("../imgs/fruit.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 1060px) {
+  .grid-container .candy {
+    display: block;
+    grid-area: candy;
+    overflow: hidden;
+  }
+}
+
+.grid-container .nom, .grid-container .yum {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid-container .nom {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: nom;
+  background-color: #333333;
+  color: white;
+}
+
+.grid-container .yum {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: yum;
+  background-color: #e4af4d;
+}
+
+.grid-container footer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #252525;
+  color: #474747;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0 0.8rem;
+}
+
+.grid-container footer p {
+  margin: 0;
+}
+/*# sourceMappingURL=main.css.map */
