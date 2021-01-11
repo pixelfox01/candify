@@ -100,6 +100,7 @@ body {
 
 @media (min-width: 1060px) {
   .grid-container .nav {
+    padding: 0 60px;
     background-color: white;
   }
 }
@@ -114,9 +115,23 @@ body {
           justify-content: space-evenly;
 }
 
+@media (min-width: 1060px) {
+  .grid-container .nav ul {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .grid-container .nav ul li {
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+@media (min-width: 1060px) {
+  .grid-container .nav ul li {
+    font-size: 1.3rem;
+  }
 }
 
 .grid-container .nav ul li:last-child a {

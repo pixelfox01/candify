@@ -107,6 +107,7 @@ body {
         align-items: center;
 
         @include desktop {
+            padding: 0 60px;
             background-color: white;
         }
 
@@ -115,9 +116,17 @@ body {
             display: flex;
             justify-content: space-evenly;
 
+            @include desktop {
+                justify-content: space-between;
+            }
+
             li {
                 font-size: 1.1rem;
                 font-weight: 600;
+
+                @include desktop {
+                    font-size: 1.3rem;
+                }
             }
 
             li:last-child {
