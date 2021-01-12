@@ -185,12 +185,19 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.grid-container .nom hr, .grid-container .yum hr {
+  margin: 0;
+  width: 20%;
+  border: none;
+  border-radius: 10px;
 }
 
 .grid-container .nom {
@@ -202,12 +209,20 @@ body {
   color: white;
 }
 
+.grid-container .nom hr {
+  border-top: 2px solid white;
+}
+
 .grid-container .yum {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: yum;
   background-color: #e4af4d;
+}
+
+.grid-container .yum hr {
+  border-top: 2px solid black;
 }
 
 .grid-container footer {

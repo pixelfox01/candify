@@ -176,19 +176,34 @@ body {
         font-size: 1.5rem;
         font-weight: 700;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
+
+        hr {
+            margin: 0;
+            width: 20%;
+            border: none;
+            border-radius: 10px;
+        }
     }
 
     .nom {
         grid-area: nom;
         background-color: #333333;
         color: white;
+
+        hr {
+            border-top: 2px solid white;
+        }
     }
 
     .yum {
         grid-area: yum;
         background-color: #e4af4d;
+
+        hr {
+            border-top: 2px solid black;
+        }
     }
 
     footer {
