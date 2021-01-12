@@ -30,9 +30,9 @@ body {
   display: grid;
   -ms-grid-columns: 0.4fr 1fr;
       grid-template-columns: 0.4fr 1fr;
-  -ms-grid-rows: 0.7fr 5fr 1fr 1fr 0.8fr;
-      grid-template-rows: 0.7fr 5fr 1fr 1fr 0.8fr;
-      grid-template-areas: "brand  nav" "main   main" "nom    nom" "yum    yum" "footer footer";
+  -ms-grid-rows: 0.7fr 0.7fr 5fr 1fr 1fr 0.8fr;
+      grid-template-rows: 0.7fr 0.7fr 5fr 1fr 1fr 0.8fr;
+      grid-template-areas: "brand  brand" "nav    nav" "main   main" "nom    nom" "yum    yum" "footer footer";
 }
 
 @media (min-width: 768px) {
@@ -56,10 +56,14 @@ body {
 .grid-container .brand {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: brand;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -83,10 +87,11 @@ body {
 }
 
 .grid-container .nav {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: nav;
-  background-color: #f8d174;
+  background-color: #f6c961;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,6 +101,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 768px) {
+  .grid-container .nav {
+    background-color: #f8d174;
+  }
 }
 
 @media (min-width: 1060px) {
@@ -140,7 +151,7 @@ body {
 }
 
 .grid-container .main {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: main;
@@ -201,7 +212,7 @@ body {
 }
 
 .grid-container .nom {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: nom;
@@ -214,7 +225,7 @@ body {
 }
 
 .grid-container .yum {
-  -ms-grid-row: 4;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: yum;
@@ -226,7 +237,7 @@ body {
 }
 
 .grid-container footer {
-  -ms-grid-row: 5;
+  -ms-grid-row: 6;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: footer;

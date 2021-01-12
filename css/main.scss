@@ -2,7 +2,7 @@
 
 $colors:(primary:#f8d174,
     accent: #fa403a,
-    primary-dark: darken(#f6ca63, 20%));
+    primary-dark: darken(#f6ca63, 0.5%));
 
 @function color($name) {
     @return map-get($colors, $name);
@@ -52,9 +52,10 @@ body {
     height: 100%;
     display: grid;
     grid-template-columns: 0.4fr 1fr;
-    grid-template-rows: 0.7fr 5fr 1fr 1fr 0.8fr;
+    grid-template-rows: 0.7fr 0.7fr 5fr 1fr 1fr 0.8fr;
     grid-template-areas:
-        "brand  nav"
+        "brand  brand"
+        "nav    nav"
         "main   main"
         "nom    nom"
         "yum    yum"
@@ -83,8 +84,10 @@ body {
     .brand {
         grid-area: brand;
         display: flex;
+        justify-content: center;
         align-items: center;
         padding-left: 16px;
+
         background-color: color(primary);
 
         @include desktop {
@@ -101,10 +104,14 @@ body {
 
     .nav {
         grid-area: nav;
-        background-color: color(primary);
+        background-color: color(primary-dark);
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include tablet {
+            background-color: color(primary);
+        }
 
         @include desktop {
             padding: 0 60px;
